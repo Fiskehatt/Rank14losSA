@@ -1,0 +1,7 @@
+## Interface: 11200
+## Title: Rank14losSA
+## Notes: Backport of GladiatorlosSA
+## Author: Nogall of feenix Warsong
+## SavedVariables: RSAConfig
+
+RSA.xml

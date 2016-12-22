@@ -1,0 +1,329 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<Script file="RSA.lua" />
+	
+	<CheckButton name="RSACheckButtonTemplate" inherits="UICheckButtonTemplate" virtual="true">
+		<HitRectInsets>
+			<AbsInset left="0" right="-100" top="0" bottom="0"/>
+		</HitRectInsets>
+		<Scripts>
+			<OnClick>
+				RSACheckButton_OnClick()
+			</OnClick>
+		</Scripts>
+	</CheckButton>
+	
+	<Frame name="RSAMenuFrame" hidden="true" framestrata="LOW" enableMouse="true" parent="UIParent">
+		<Size>
+			<AbsDimension x="298" y="150" />
+		</Size>
+		<Anchors>
+			<Anchor point="CENTER" relativeTo="UIParent" relativePoint="CENTER">
+				<Offset>
+					<AbsDimension x="-300" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Backdrop name="RSAMenuFrameBackdrop" bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+			<BackgroundInsets>
+				<AbsInset left="4" right="4" top="4" bottom="4" />
+			</BackgroundInsets>
+			<TileSize>
+				<AbsValue val="16" />
+			</TileSize>
+			<EdgeSize>
+				<AbsValue val="16" />
+			</EdgeSize>
+		</Backdrop>
+		<Layers>
+			<Layer level="BORDER">
+				<FontString name="$parentHeader" inherits="SystemFont" text="Rank14losSA">
+					<Anchors>
+						<Anchor point="TOP">
+							<Offset>
+								<AbsDimension x="0" y="-5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentButtonSound" inherits="GameMenuBUttonTemplate" text="Sound files">
+				<Anchors>
+					<Anchor point="BOTTOM">
+						<Offset>
+							<AbsDimension x="0" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						RSASoundOptionFrame_Toggle()
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentButtonClose" inherits="UIPanelCloseButton">
+				<Anchors>
+					<Anchor point="TOPRIGHT">
+						<Offset>
+							<AbsDimension x="2" y="1"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<CheckButton name="$parentButton1" inherits="RSACheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="5" y="-30" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</CheckButton>
+			<CheckButton name="$parentButton2" inherits="RSACheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentButton1" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="10" y="3" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</CheckButton>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				RSA_OnLoad()
+			</OnLoad>
+			<OnEvent>
+				RSA_OnEvent(event)
+			</OnEvent>
+			<OnShow>
+				RSAMenuFrame_Update()
+			</OnShow>
+		</Scripts>
+	</Frame>
+	
+	<Frame name="RSASoundOptionFrame" hidden="true" frameStrata="LOW" enableMouse="true" parent="UIParent">
+		<Size>
+			<AbsDimension x="298" y="422" />
+		</Size>
+		<Anchors>
+			<Anchor point="LEFT" relativeTo="RSAMenuFrame" relativePoint="RIGHT">
+				<Offset>
+					<AbsDimension x="25" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Backdrop name="$parentBackdrop" bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+			<BackgroundInsets>
+				<AbsInset left="4" right="4" top="4" bottom="4" />
+			</BackgroundInsets>
+			<TileSize>
+				<AbsValue val="16" />
+			</TileSize>
+			<EdgeSize>
+				<AbsValue val="16" />
+			</EdgeSize>
+		</Backdrop>
+		<Frames>
+			<CheckButton name="$parentButton1" inherits="RSACheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="5" y="-20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</CheckButton>
+			<CheckButton name="$parentButton2" inherits="RSACheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="$parentButton1" relativePoint="BOTTOMRIGHT">
+						<Offset>
+							<AbsDimension x="0" y="9"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</CheckButton>
+			<CheckButton name="$parentButton3" inherits="RSACheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="$parentButton2" relativePoint="BOTTOMRIGHT">
+						<Offset>
+							<AbsDimension x="0" y="9"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</CheckButton>
+			<CheckButton name="$parentButton4" inherits="RSACheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="$parentButton3" relativePoint="BOTTOMRIGHT">
+						<Offset>
+							<AbsDimension x="0" y="9"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</CheckButton>
+			<CheckButton name="$parentButton5" inherits="RSACheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="$parentButton4" relativePoint="BOTTOMRIGHT">
+						<Offset>
+							<AbsDimension x="0" y="9"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</CheckButton>
+			<CheckButton name="$parentButton6" inherits="RSACheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="$parentButton5" relativePoint="BOTTOMRIGHT">
+						<Offset>
+							<AbsDimension x="0" y="9"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</CheckButton>
+			<CheckButton name="$parentButton7" inherits="RSACheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="$parentButton6" relativePoint="BOTTOMRIGHT">
+						<Offset>
+							<AbsDimension x="0" y="9"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</CheckButton>
+			<CheckButton name="$parentButton8" inherits="RSACheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="$parentButton7" relativePoint="BOTTOMRIGHT">
+						<Offset>
+							<AbsDimension x="0" y="9"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</CheckButton>
+			<CheckButton name="$parentButton9" inherits="RSACheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="$parentButton8" relativePoint="BOTTOMRIGHT">
+						<Offset>
+							<AbsDimension x="0" y="9"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</CheckButton>
+			<CheckButton name="$parentButton10" inherits="RSACheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="$parentButton9" relativePoint="BOTTOMRIGHT">
+						<Offset>
+							<AbsDimension x="0" y="9"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</CheckButton>
+			<CheckButton name="$parentButton11" inherits="RSACheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="$parentButton10" relativePoint="BOTTOMRIGHT">
+						<Offset>
+							<AbsDimension x="0" y="9"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</CheckButton>
+			<CheckButton name="$parentButton12" inherits="RSACheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="$parentButton11" relativePoint="BOTTOMRIGHT">
+						<Offset>
+							<AbsDimension x="0" y="9"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</CheckButton>
+			<CheckButton name="$parentButton13" inherits="RSACheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="$parentButton12" relativePoint="BOTTOMRIGHT">
+						<Offset>
+							<AbsDimension x="0" y="9"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</CheckButton>
+			<CheckButton name="$parentButton14" inherits="RSACheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="$parentButton13" relativePoint="BOTTOMRIGHT">
+						<Offset>
+							<AbsDimension x="0" y="9"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</CheckButton>
+			<CheckButton name="$parentButton15" inherits="RSACheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="$parentButton14" relativePoint="BOTTOMRIGHT">
+						<Offset>
+							<AbsDimension x="0" y="9"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</CheckButton>
+			<CheckButton name="$parentButton16" inherits="RSACheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="$parentButton15" relativePoint="BOTTOMRIGHT">
+						<Offset>
+							<AbsDimension x="0" y="9"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</CheckButton>
+			<CheckButton name="$parentButton17" inherits="RSACheckButtonTemplate">
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="$parentButton16" relativePoint="BOTTOMRIGHT">
+						<Offset>
+							<AbsDimension x="0" y="9"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</CheckButton>
+			<ScrollFrame name="$parentScrollFrame" inherits="FauxScrollFrameTemplate">
+				<Size>
+					<AbsDimension x="271" y="390"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativeTo="$parent" relativePoint="TOPRIGHT">
+						<Offset>
+							<AbsDimension x="-28" y="-26"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnVerticalScroll>
+						FauxScrollFrame_OnVerticalScroll(16, RSASoundOptionFrame_Update);
+					</OnVerticalScroll>
+				</Scripts>
+			</ScrollFrame>
+			<Button name="$parentButtonClose" inherits="UIPanelCloseButton">
+				<Anchors>
+					<Anchor point="TOPRIGHT">
+						<Offset>
+							<AbsDimension x="2" y="1"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+		</Frames>
+		<Layers>
+			<Layer level="BORDER">
+				<FontString name="$parentHeader" inherits="SystemFont" text="Rank14losSA sound files:">
+					<Anchors>
+						<Anchor point="TOP">
+							<Offset>
+								<AbsDimension x="-15" y="-5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnShow>
+				RSASoundOptionFrame_Update()
+			</OnShow>
+		</Scripts>
+	</Frame>
+</Ui>
