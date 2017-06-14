@@ -1,3 +1,11 @@
+Rank14losSA - an addon that verbally says when an enemy uses any important spells (e.g. blind, shield wall, reflector, etc.)
+
+Made by Nogall of Feenix Warsong.
+
+
+**Original read me:**
+
+~~~~
 Rank14losSA is a backport of the popular GladiatorlosSA AddOn for cata.
 
 Instructions:
@@ -11,5 +19,5 @@ be able to play the sound files.
 Changelog:
 
 v0.1 toomany changes up to this point to make any note.
-
+~~~~
 
