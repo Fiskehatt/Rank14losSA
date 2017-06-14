@@ -1,4 +1,4 @@
-Rank14losSA - An addon that verbally warns you when an enemy uses any important spells (e.g. blind, shield wall, reflector, etc.)
+Rank14losSA - An addon that verbally warns you when an enemy uses an important spell (e.g. blind, shield wall, reflector, etc.)
 
 Made by Nogall of Feenix Warsong.
 
